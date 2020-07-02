@@ -1,6 +1,7 @@
 const passport = require('passport');
 const FacebookStrategy = require('passport-facebook').Strategy;
-const { FACEBOOK_APP_ID, FACEBOOK_APP_SECRET } = require('./config');
+const FACEBOOK_APP_ID = process.env.FACEBOOK_APP_ID || require('./config').FACEBOOK_APP_ID;
+const FACEBOOK_APP_SECRET = process.env.FACEBOOK_APP_SECRET || require('./config').FACEBOOK_APP_SECRET;
 const { retrieveUserById, createUser } = require('./models');
 
 const setUpPassport = () => {

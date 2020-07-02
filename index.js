@@ -10,7 +10,7 @@ const { getApptsByDate, getAppt, makeAppt, editAppt } = require('./controllers')
 const { setUpPassport, isLoggedIn, shouldSendIndex } = require('./passport');
 const subdomain = require('express-subdomain');
 const router = express.Router();
-const cookieSecret = process.env.COOKIE_EXPIRATION || require('./config').COOKIE_EXPIRATION;
+const cookieSecret = process.env.COOKIES_EXPIRATION || require('./config').COOKIES_EXPIRATION;
 
 setUpPassport();
 
